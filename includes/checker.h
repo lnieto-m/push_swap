@@ -6,14 +6,13 @@
 /*   By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/27 11:50:43 by lnieto-m          #+#    #+#             */
-/*   Updated: 2016/07/27 11:51:23 by lnieto-m         ###   ########.fr       */
+/*   Updated: 2016/07/27 16:54:55 by lnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER
-# define CHECKER
+#ifndef CHECKER_H
+# define CHECKER_H
 
 # include "libftprintf.h"
-
 
 #endif

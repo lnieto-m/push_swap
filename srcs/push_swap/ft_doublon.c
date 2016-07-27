@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_doublon.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/27 11:16:52 by lnieto-m          #+#    #+#             */
-/*   Updated: 2016/07/27 16:54:43 by lnieto-m         ###   ########.fr       */
+/*   Created: 2016/04/22 13:56:24 by lnieto-m          #+#    #+#             */
+/*   Updated: 2016/07/27 18:05:21 by lnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "libftprintf.h"
-
-# define MAX_INT 2147483647
-# define MIN_INT -2147483648
-
-typedef struct		s_stack
+int		ft_doublon(int ac, char **av)
 {
-	int				data;
-	struct s_stack	*next;
-}					t_stack;
+	int		i;
+	int		j;
 
-int					ft_error(int ac, char **av);
-int					ft_doublon(int ac, char **av);
-
-#endif
+	i = 1;
+	j = 2;
+	while (i < ac)
+	{
+		while (j < ac)
+		{
+			if (ft_strcmp(av[i], av[j]) == 0)
+				return (-1);
+			j++;
+		}
+		i++;
+		j = i + 1;
+	}
+	return (0);
+}
