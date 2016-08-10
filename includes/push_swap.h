@@ -6,7 +6,7 @@
 /*   By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/27 11:16:52 by lnieto-m          #+#    #+#             */
-/*   Updated: 2016/07/27 16:54:43 by lnieto-m         ###   ########.fr       */
+/*   Updated: 2016/08/10 14:47:10 by lnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,9 @@ typedef struct		s_stack
 
 int					ft_error(int ac, char **av);
 int					ft_doublon(int ac, char **av);
+int					add_element(t_stack *begin, t_stack *stack, int data);
+void				remove_element(t_stack *begin, t_stack *elem);
+int					add_last_element(t_stack *begin, int data);
+void				remove_last_element(t_stack *begin);
 
 #endif
