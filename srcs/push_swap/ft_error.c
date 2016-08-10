@@ -6,13 +6,19 @@
 /*   By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 10:52:36 by lnieto-m          #+#    #+#             */
-/*   Updated: 2016/07/27 17:05:04 by lnieto-m         ###   ########.fr       */
+/*   Updated: 2016/08/10 16:15:56 by lnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	is_number(char *nb)
+void			print_error(void)
+{
+	ft_putstr_fd("Error\n", 2);
+	exit(EXIT_FAILURE);
+}
+
+static int		is_number(char *nb)
 {
 	int		i;
 
@@ -33,7 +39,7 @@ static int	is_number(char *nb)
 	return (0);
 }
 
-int			ft_error(int ac, char **av)
+int				ft_error(int ac, char **av)
 {
 	int		i;
 

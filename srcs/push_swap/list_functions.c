@@ -6,33 +6,26 @@
 /*   By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/10 14:25:23 by lnieto-m          #+#    #+#             */
-/*   Updated: 2016/08/10 14:48:30 by lnieto-m         ###   ########.fr       */
+/*   Updated: 2016/08/10 16:37:47 by lnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int			add_element(t_stack *begin, t_stack *stack, int data)
+t_stack			*add_element(t_stack *begin, int data)
 {
 	t_stack		*elem;
 
-	if (stack == NULL)
+	if (!(elem = (t_stack *)malloc(sizeof(t_stack))))
+		return (NULL);
+	elem->data = data;
+	elem->next = NULL;
+	if (begin != NULL)
 	{
-		if (!(stack = (t_stack *)malloc(sizeof(t_stack))))
-			return (-1);
-		stack->data = data;
-		stack->next = NULL;
-		begin = stack;
+		elem->next = begin;
+		return (elem);
 	}
-	else
-	{
-		if (!(elem = (t_stack *)malloc(sizeof(t_stack))))
-			return (-1);
-		elem->data = data;
-		elem->next = stack;
-		begin = elem;
-	}
-	return (0);
+	return (begin);
 }
 
 void		remove_element(t_stack *begin, t_stack *elem)
@@ -41,30 +34,23 @@ void		remove_element(t_stack *begin, t_stack *elem)
 	free(elem);
 }
 
-int			add_last_element(t_stack *begin, int data)
+t_stack		*add_last_element(t_stack *begin, int data)
 {
 	t_stack		*tmp;
 	t_stack		*elem;
 
 	tmp = begin;
-	if (begin == NULL)
-	{
-		if (!(begin = (t_stack *)malloc(sizeof(t_stack))))
-			return (-1);
-		begin->data = data;
-		begin->next = NULL;
-	}
-	else
+	if (!(elem = (t_stack *)malloc(sizeof(t_stack))))
+		return (NULL);
+	elem->data = data;
+	elem->next = NULL;
+	if (begin != NULL)
 	{
 		while (tmp->next != NULL)
 			tmp = tmp->next;
-		if (!(elem = (t_stack *)malloc(sizeof(t_stack))))
-			return (-1);
-		elem->data = data;
-		elem->next = NULL;
 		tmp->next = elem;
 	}
-	return (0);
+	return (elem);
 }
 
 void		remove_last_element(t_stack *begin)
