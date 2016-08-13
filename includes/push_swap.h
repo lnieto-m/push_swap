@@ -6,7 +6,7 @@
 /*   By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/27 11:16:52 by lnieto-m          #+#    #+#             */
-/*   Updated: 2016/08/13 18:01:02 by lnieto-m         ###   ########.fr       */
+/*   Updated: 2016/08/13 19:04:36 by lnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_stack				*rrb(t_stack *b);
 t_a_and_b			ss(t_a_and_b stack);
 t_a_and_b			pa(t_a_and_b stack);
 t_a_and_b			pb(t_a_and_b stack);
-t_a_and_b			*rr(t_a_and_b stack);
-t_a_and_b			*rrr(t_a_and_b stack);
+t_a_and_b			rr(t_a_and_b stack);
+t_a_and_b			rrr(t_a_and_b stack);
 
 #endif
