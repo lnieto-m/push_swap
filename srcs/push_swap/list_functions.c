@@ -6,7 +6,7 @@
 /*   By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/10 14:25:23 by lnieto-m          #+#    #+#             */
-/*   Updated: 2016/08/13 13:29:33 by lnieto-m         ###   ########.fr       */
+/*   Updated: 2016/08/13 14:49:37 by lnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_stack			*add_element(t_stack *begin, int data)
 	return (begin);
 }
 
-t_stack		*remove_element(t_stack *begin)
+t_stack			*remove_element(t_stack *begin)
 {
 	if (begin == NULL)
 		return (NULL);
@@ -44,7 +44,7 @@ t_stack		*remove_element(t_stack *begin)
 	return (begin);
 }
 
-t_stack		*add_last_element(t_stack *begin, int data)
+t_stack			*add_last_element(t_stack *begin, int data)
 {
 	t_stack		*tmp;
 	t_stack		*elem;
@@ -67,13 +67,22 @@ t_stack		*add_last_element(t_stack *begin, int data)
 	return (begin);
 }
 
-void		remove_last_element(t_stack *begin)
+t_stack			*remove_last_element(t_stack *begin)
 {
 	t_stack		*tmp;
 
+	if (begin == NULL)
+		return (NULL);
+	else if (begin->next == NULL)
+	{
+		free(begin);
+		begin = NULL;
+		return (begin);
+	}
 	tmp = begin;
 	while (tmp->next->next != NULL)
 		tmp = tmp->next;
 	free(tmp->next);
 	tmp->next = NULL;
+	return (begin);
 }

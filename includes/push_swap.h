@@ -6,7 +6,7 @@
 /*   By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/27 11:16:52 by lnieto-m          #+#    #+#             */
-/*   Updated: 2016/08/13 13:09:37 by lnieto-m         ###   ########.fr       */
+/*   Updated: 2016/08/13 14:50:01 by lnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int					ft_doublon(int ac, char **av);
 t_stack				*add_element(t_stack *begin, int data);
 t_stack				*remove_element(t_stack *begin);
 t_stack				*add_last_element(t_stack *begin, int data);
-void				remove_last_element(t_stack *begin);
+t_stack				*remove_last_element(t_stack *begin);
 void				print_error(void);
 
 #endif
