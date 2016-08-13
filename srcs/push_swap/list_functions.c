@@ -6,7 +6,7 @@
 /*   By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/10 14:25:23 by lnieto-m          #+#    #+#             */
-/*   Updated: 2016/08/10 16:37:47 by lnieto-m         ###   ########.fr       */
+/*   Updated: 2016/08/13 13:15:38 by lnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_stack			*add_element(t_stack *begin, int data)
 		return (NULL);
 	elem->data = data;
 	elem->next = NULL;
+	elem->prev = NULL;
 	if (begin != NULL)
 	{
 		elem->next = begin;
@@ -28,10 +29,16 @@ t_stack			*add_element(t_stack *begin, int data)
 	return (begin);
 }
 
-void		remove_element(t_stack *begin, t_stack *elem)
+t_stack		*remove_element(t_stack *begin)
 {
-	begin = elem->next;
-	free(elem);
+	if (begin->next == NULL)
+	{
+		free(begin);
+		return (NULL);
+	}
+	begin = begin->next;
+	free(begin->prev);
+	return (begin);
 }
 
 t_stack		*add_last_element(t_stack *begin, int data)
@@ -44,13 +51,17 @@ t_stack		*add_last_element(t_stack *begin, int data)
 		return (NULL);
 	elem->data = data;
 	elem->next = NULL;
+	elem->prev = NULL;
 	if (begin != NULL)
 	{
 		while (tmp->next != NULL)
 			tmp = tmp->next;
 		tmp->next = elem;
+		elem->prev = tmp;
 	}
-	return (elem);
+	else
+		begin = elem;
+	return (begin);
 }
 
 void		remove_last_element(t_stack *begin)
