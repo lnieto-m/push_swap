@@ -6,7 +6,7 @@
 /*   By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 09:49:59 by lnieto-m          #+#    #+#             */
-/*   Updated: 2016/08/13 13:09:41 by lnieto-m         ###   ########.fr       */
+/*   Updated: 2016/08/13 13:29:31 by lnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int					main(int ac, char **av)
 	if ((stack = parsing_args(ac, av)) == NULL)
 		print_error();
 	t_stack *tmp = stack;
+	ft_printf("%s", stack->prev);
 	while (tmp != NULL)
 	{
 		ft_printf("%d\n", tmp->data);

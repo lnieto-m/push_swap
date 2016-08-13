@@ -6,7 +6,7 @@
 /*   By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/10 14:25:23 by lnieto-m          #+#    #+#             */
-/*   Updated: 2016/08/13 13:15:38 by lnieto-m         ###   ########.fr       */
+/*   Updated: 2016/08/13 13:29:33 by lnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ t_stack			*add_element(t_stack *begin, int data)
 
 t_stack		*remove_element(t_stack *begin)
 {
+	if (begin == NULL)
+		return (NULL);
 	if (begin->next == NULL)
 	{
 		free(begin);
@@ -38,6 +40,7 @@ t_stack		*remove_element(t_stack *begin)
 	}
 	begin = begin->next;
 	free(begin->prev);
+	begin->prev = NULL;
 	return (begin);
 }
 
@@ -69,7 +72,8 @@ void		remove_last_element(t_stack *begin)
 	t_stack		*tmp;
 
 	tmp = begin;
-	while (tmp->next != NULL)
+	while (tmp->next->next != NULL)
 		tmp = tmp->next;
-	free(tmp);
+	free(tmp->next);
+	tmp->next = NULL;
 }
