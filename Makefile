@@ -6,7 +6,7 @@
 #    By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/07 18:24:41 by lnieto-m          #+#    #+#              #
-#    Updated: 2016/08/10 14:47:37 by lnieto-m         ###   ########.fr        #
+#    Updated: 2016/08/13 15:39:20 by lnieto-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRC_NAME = push_swap/main.c \
 		   push_swap/ft_doublon.c \
 		   push_swap/list_functions.c \
 		   push_swap/operations.c \
+		   push_swap/swap.c \
 
 SRC_NAME2 = checker/main.c \
 

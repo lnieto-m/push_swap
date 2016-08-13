@@ -6,41 +6,53 @@
 /*   By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/10 14:17:37 by lnieto-m          #+#    #+#             */
-/*   Updated: 2016/08/13 13:12:42 by lnieto-m         ###   ########.fr       */
+/*   Updated: 2016/08/13 18:03:43 by lnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		swap(t_stack *stack)
+t_stack		*swap(t_stack *stack)
 {
 	int		tmp;
 
 	if (stack == NULL || stack->next == NULL)
-		return ;
+		return (stack);
 	tmp = stack->next->data;
 	stack->next->data = stack->data;
 	stack->data = tmp;
+	return (stack);
 }
 
-void		push(t_stack *a, t_stack *b)
+t_a_and_b		pushb(t_a_and_b stack)
 {
-	if (a == NULL)
-		return ;
-	b = add_element(b, a->data);
-	a = remove_element(a);
+	if (stack.a == NULL)
+		return (stack);
+	stack.b = add_element(stack.b, stack.a->data);
+	stack.a = remove_element(stack.a);
+	return (stack);
 }
 
-void		rotate(t_stack *stack)
+t_a_and_b		pusha(t_a_and_b stack)
+{
+	if (stack.b == NULL)
+		return (stack);
+	stack.a = add_element(stack.a, stack.b->data);
+	stack.b = remove_element(stack.b);
+	return (stack);
+}
+
+t_stack		*rotate(t_stack *stack)
 {
 	if (stack == NULL || stack->next == NULL)
-		return ;
+		return (NULL);
 	stack = stack->next;
 	stack = add_last_element(stack, stack->prev->data);
 	free(stack->prev);
+	return (stack);
 }
 
-void		reverse_rotate(t_stack *stack)
+t_stack		*reverse_rotate(t_stack *stack)
 {
 	t_stack		*tmp;
 
@@ -48,7 +60,9 @@ void		reverse_rotate(t_stack *stack)
 	while (tmp->next != NULL)
 		tmp = tmp->next;
 	if (stack == NULL || stack->next == NULL)
-		return ;
+		return (stack);
 	stack = add_element(stack, tmp->data);
+	tmp->prev->next = NULL;
 	free(tmp);
+	return (stack);
 }

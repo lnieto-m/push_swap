@@ -6,7 +6,7 @@
 /*   By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 09:49:59 by lnieto-m          #+#    #+#             */
-/*   Updated: 2016/08/13 14:51:34 by lnieto-m         ###   ########.fr       */
+/*   Updated: 2016/08/13 15:14:01 by lnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static t_stack		*parsing_args(int ac, char **av)
 			print_error();
 		i++;
 	}
-	stack = remove_element(stack);
+	stack = swap(stack);
 	return (stack);
 }
 
@@ -41,11 +41,5 @@ int					main(int ac, char **av)
 	if (ft_error(ac, av) == -1 || ft_doublon(ac, av) == -1)
 		print_error();
 	stack = parsing_args(ac, av);
-	t_stack *tmp = stack;
-	while (tmp != NULL)
-	{
-		ft_printf("%d\n", tmp->data);
-		tmp = tmp->next;
-	}
 	return (0);
 }
