@@ -6,7 +6,7 @@
 /*   By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/27 11:16:52 by lnieto-m          #+#    #+#             */
-/*   Updated: 2016/08/13 19:04:36 by lnieto-m         ###   ########.fr       */
+/*   Updated: 2016/08/14 11:43:23 by lnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ t_stack				*add_element(t_stack *begin, int data);
 t_stack				*remove_element(t_stack *begin);
 t_stack				*add_last_element(t_stack *begin, int data);
 t_stack				*remove_last_element(t_stack *begin);
+void				delete_stack(t_stack *stack);
 
 /*
 ** -------------- BASIC OPERATIONS ------------------

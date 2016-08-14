@@ -6,7 +6,7 @@
 #    By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/07 18:24:41 by lnieto-m          #+#    #+#              #
-#    Updated: 2016/08/13 15:39:20 by lnieto-m         ###   ########.fr        #
+#    Updated: 2016/08/14 13:50:41 by lnieto-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,9 @@ SRC_NAME = push_swap/main.c \
 		   push_swap/list_functions.c \
 		   push_swap/operations.c \
 		   push_swap/swap.c \
+		   push_swap/rotate.c \
+		   push_swap/reverse_rotate.c \
+		   push_swap/push.c \
 
 SRC_NAME2 = checker/main.c \
 

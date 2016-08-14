@@ -6,7 +6,7 @@
 /*   By: lnieto-m <lnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/13 16:41:13 by lnieto-m          #+#    #+#             */
-/*   Updated: 2016/08/13 17:41:14 by lnieto-m         ###   ########.fr       */
+/*   Updated: 2016/08/14 13:52:12 by lnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 t_stack		*ra(t_stack *a)
 {
-	stack = rotate(a);
+	a = rotate(a);
 	ft_printf("ra");
-	return (stack);
+	return (a);
 }
 
 t_stack		*rb(t_stack *b)
 {
-	stack = rotate(b);
+	b = rotate(b);
 	ft_printf("rb");
-	return (stack);
+	return (b);
 }
 
-t_a_and_b	*rr(t_a_and_b stack)
+t_a_and_b	rr(t_a_and_b stack)
 {
 	stack.a = rotate(stack.a);
 	stack.b = rotate(stack.b);
